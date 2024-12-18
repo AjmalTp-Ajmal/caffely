@@ -41,7 +41,7 @@ class HomeFullpage extends HookWidget {
                 child: CircleAvatar(),
               )
             ],
-          )
+          ),
         ],
       )),
     );
