@@ -1,3 +1,4 @@
+import 'package:caffely/core/theme/dark_theme.dart';
 import 'package:caffely/view/screens/complete_your_profile.dart';
 import 'package:caffely/view/screens/home_fullpage.dart';
 import 'package:caffely/view/screens/nearby_shop.dart';
@@ -15,8 +16,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: darktheme,
       home: NearbyShop(),
     );
   }

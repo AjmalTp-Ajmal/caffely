@@ -1,3 +1,4 @@
+import 'package:caffely/core/theme/color_extension.dart';
 import 'package:caffely/view_model/nearbyshop_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -79,9 +80,9 @@ class NearbyShop extends HookWidget {
                                   const SizedBox(
                                     width: 16,
                                   ),
-                                  const Icon(
+                                   Icon(
                                     Icons.location_on,
-                                    color: Color.fromARGB(255, 0, 175, 102),
+                                    color:Theme.of(context).extension<ColorExtension>()!.buttonclr
                                   ),
                                   Text(nearbyshopelist[index].distance),
                                 ],
