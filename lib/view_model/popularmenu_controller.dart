@@ -5,4 +5,8 @@ List<Popularmenumodel> popularlist = [
       img: "assets/images/coffee1.png", name: "esspresso", price: "₹150"),
   Popularmenumodel(
       img: "assets/images/coffee1.png", name: "esspresso", price: "₹150"),
+  Popularmenumodel(
+      img: "assets/images/coffee1.png", name: "esspresso", price: "₹150"),
+  Popularmenumodel(
+      img: "assets/images/coffee1.png", name: "esspresso", price: "₹150"),
 ];

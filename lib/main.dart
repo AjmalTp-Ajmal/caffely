@@ -1,4 +1,5 @@
 import 'package:caffely/core/theme/dark_theme.dart';
+import 'package:caffely/view/screens/home/coffeeshope_details.dart';
 import 'package:caffely/view/screens/home/nearby_shop.dart';
 import 'package:caffely/view/screens/home/notification.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: darktheme,
-      home: const Notifications(),
+      home: const CoffeeshopeDetails(),
     );
   }
 }

@@ -56,7 +56,8 @@ class PopularMenu extends HookWidget {
                         ],
                       ),
                     );
-                  }))
+                  })
+                  )
         ],
       )),
     );
