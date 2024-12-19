@@ -1,7 +1,6 @@
 import 'package:caffely/core/theme/dark_theme.dart';
 import 'package:caffely/view/screens/home/nearby_shop.dart';
-
-
+import 'package:caffely/view/screens/home/notification.dart';
 
 import 'package:flutter/material.dart';
 
@@ -14,10 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: darktheme,
-      home: NearbyShop(),
+      home: const Notifications(),
     );
   }
 }
