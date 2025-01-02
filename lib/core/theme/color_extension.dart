@@ -7,6 +7,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
   final Color buttonclr;
   final Color subbuttonclr;
   final Color errorclr;
+  final Color subtxtclrbold;
 
   ColorExtension(
       {required this.primary,
@@ -14,7 +15,8 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
       required this.subtextclr,
       required this.buttonclr,
       required this.subbuttonclr,
-      required this.errorclr});
+      required this.errorclr,
+      required this.subtxtclrbold});
 
   @override
   ThemeExtension<ColorExtension> copyWith() {
@@ -24,6 +26,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
     Color? buttonclr;
     Color? subbuttonclr;
     Color? errorclr;
+    Color? subtxtclrbold;
 
     return ColorExtension(
       primary: primary ?? this.primary,
@@ -32,6 +35,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
       buttonclr: buttonclr ?? this.buttonclr,
       subbuttonclr: subbuttonclr ?? this.subbuttonclr,
       errorclr: errorclr ?? this.errorclr,
+      subtxtclrbold: subtxtclrbold ?? this.subtxtclrbold,
     );
   }
 
@@ -48,6 +52,7 @@ class ColorExtension extends ThemeExtension<ColorExtension> {
       buttonclr: Color.lerp(buttonclr, other.buttonclr, t)!,
       subbuttonclr: Color.lerp(subbuttonclr, other.subbuttonclr, t)!,
       errorclr: Color.lerp(errorclr, other.errorclr, t)!,
+      subtxtclrbold: Color.lerp(subtxtclrbold, other.subtxtclrbold, t)!,
     );
   }
 }

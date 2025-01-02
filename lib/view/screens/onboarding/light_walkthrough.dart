@@ -1,3 +1,8 @@
+import 'package:caffely/core/constants/home/home_constants.dart';
+import 'package:caffely/core/theme/extensions/space_extensions.dart';
+import 'package:caffely/core/theme/extensions/theme_extension.dart';
+import 'package:caffely/core/theme/extensions/typography.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -28,19 +33,14 @@ class Walkthrough extends HookWidget {
             },
           ),
           Positioned(
-            bottom: 150,
+            bottom: context.space.space_900 * 1.7,
             right: 170,
             child: SmoothPageIndicator(
               controller: pageController,
               count: 3,
-              effect: const ExpandingDotsEffect(
-                  activeDotColor: Color.fromARGB(
-                    255,
-                    0,
-                    175,
-                    102,
-                  ),
-                  dotColor: Colors.grey,
+              effect: ExpandingDotsEffect(
+                  activeDotColor: context.colors.buttonclr,
+                  dotColor: context.colors.subtextclr,
                   dotHeight: 10,
                   dotWidth: 10),
             ),
@@ -55,11 +55,11 @@ class MyClip extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     double w = size.width;
-    double h = size.height - 100;
+    double h = size.height - 110;
 
     final path = Path();
     path.lineTo(0, h);
-    path.quadraticBezierTo(w * 0.5, h + 100, w, h);
+    path.quadraticBezierTo(w * 0.5, h + 110, w, h);
     path.lineTo(w, 0);
     path.close();
 
@@ -77,56 +77,53 @@ class Walkthrough_1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var constants = HomeConstants();
     return Column(
       children: [
         ClipPath(
           clipper: MyClip(),
           child: Container(
-            height: 440,
+            height: 470,
             width: double.infinity,
-            decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 0, 175, 102),
-                image: DecorationImage(
+            decoration: BoxDecoration(
+                color: context.colors.buttonclr,
+                image: const DecorationImage(
                     image: AssetImage("assets/images/mobile1.jpg"))),
           ),
         ),
-        const Center(
-          child: Text(
-            "Get Your Coffee-",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
+        Center(
+          child: Text("Get Your Coffee-", style: context.typography.h200),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
-          child: Text(
-            "Anytime, Anywhere",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-          ),
+        Center(
+          child: Text("Anytime, Anywhere", style: context.typography.h200),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
+        Center(
             child: Text(
           "Choose the way you want to enjoy your coffee ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           " with Caffely. Just a few taps on the app, and  ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           "your coffee is ready for you.",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
         const SizedBox(
           height: 50,
         ),
-        const Divider(),
+        Divider(
+          color: context.colors.subtextclr,
+        ),
         const SizedBox(
           height: 16,
         ),
@@ -138,11 +135,11 @@ class Walkthrough_1 extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green.shade100,
+                  backgroundColor: context.colors.subbuttonclr,
                   minimumSize: const Size(170, 50)),
-              child: const Text(
-                "Skip",
-                style: TextStyle(color: Color.fromARGB(255, 0, 175, 102)),
+              child: Text(
+                constants.txtskip,
+                style: TextStyle(color: context.colors.buttonclr),
               ),
             ),
             const SizedBox(
@@ -151,11 +148,11 @@ class Walkthrough_1 extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 0, 175, 102),
+                    backgroundColor: context.colors.buttonclr,
                     minimumSize: const Size(170, 50)),
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(color: Colors.white),
+                child: Text(
+                  constants.txtbutton,
+                  style: context.typography.buttontext,
                 )),
           ],
         ),
@@ -169,58 +166,61 @@ class Walkthrough_2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var constants = HomeConstants();
     return Column(
       children: [
         ClipPath(
           clipper: MyClip(),
           child: Container(
-            height: 440,
+            height: 470,
             width: double.infinity,
-            decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 0, 175, 102),
-                borderRadius: BorderRadiusDirectional.vertical(
+            decoration: BoxDecoration(
+                color: context.colors.buttonclr,
+                borderRadius: const BorderRadiusDirectional.vertical(
                     bottom: Radius.circular(60)),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage("assets/images/mobile2.jpg"))),
           ),
         ),
-        const Center(
+        Center(
           child: Text(
             "Seamless Payments With",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: context.typography.h200,
           ),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
+        Center(
           child: Text(
             "Our Secure Wallet",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: context.typography.h200,
           ),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
+        Center(
             child: Text(
           "Say goodbye to hassle and hello to seamless ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           " transaction with caffely's secure wallet ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           "Makeing payments has never been easier",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
         const SizedBox(
           height: 50,
         ),
-        const Divider(),
+        Divider(
+          color: context.colors.subtextclr,
+        ),
         const SizedBox(
           height: 16,
         ),
@@ -232,11 +232,11 @@ class Walkthrough_2 extends StatelessWidget {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green.shade100,
+                  backgroundColor: context.colors.subbuttonclr,
                   minimumSize: const Size(170, 50)),
-              child: const Text(
-                "Skip",
-                style: TextStyle(color: Color.fromARGB(255, 0, 175, 102)),
+              child: Text(
+                constants.txtskip,
+                style: TextStyle(color: context.colors.buttonclr),
               ),
             ),
             const SizedBox(
@@ -245,12 +245,10 @@ class Walkthrough_2 extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 0, 175, 102),
+                    backgroundColor: context.colors.buttonclr,
                     minimumSize: const Size(170, 50)),
-                child: const Text(
-                  "Continue",
-                  style: TextStyle(color: Colors.white),
-                )),
+                child: Text(constants.txtbutton,
+                    style: context.typography.buttontext)),
           ],
         ),
       ],
@@ -263,58 +261,61 @@ class Walkthrough_3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var constants = HomeConstants();
     return Column(
       children: [
         ClipPath(
           clipper: MyClip(),
           child: Container(
-            height: 440,
+            height: 470,
             width: double.infinity,
-            decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 0, 175, 102),
-                borderRadius: BorderRadiusDirectional.vertical(
+            decoration: BoxDecoration(
+                color: context.colors.buttonclr,
+                borderRadius: const BorderRadiusDirectional.vertical(
                     bottom: Radius.circular(60)),
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage("assets/images/mobile3.jpg"))),
           ),
         ),
-        const Center(
+        Center(
           child: Text(
             "Explore the World of",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: context.typography.h200,
           ),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
+        Center(
           child: Text(
             "Coffee Right now",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: context.typography.h200,
           ),
         ),
         const SizedBox(
           height: 10,
         ),
-        const Center(
+        Center(
             child: Text(
           "Dive into the facinating world of coffee with ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           "Caffely. Discover unique and delightfull coffee ",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
-        const Center(
+        Center(
             child: Text(
           "Flavours. one sip at a time",
-          style: TextStyle(fontSize: 16),
+          style: context.typography.body,
         )),
         const SizedBox(
           height: 50,
         ),
-        const Divider(),
+        Divider(
+          color: context.colors.subtextclr,
+        ),
         const SizedBox(
           height: 16,
         ),
@@ -328,12 +329,10 @@ class Walkthrough_3 extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 0, 175, 102),
+                      backgroundColor: context.colors.buttonclr,
                       minimumSize: const Size(360, 50)),
-                  child: const Text(
-                    "Get Started",
-                    style: TextStyle(color: Color(0xFFFFFFFF)),
-                  )),
+                  child: Text(constants.txtstarted,
+                      style: context.typography.buttontext)),
             ),
           ],
         ),

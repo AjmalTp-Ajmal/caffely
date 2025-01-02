@@ -12,11 +12,9 @@ class WelcomeScreen extends HookWidget {
         child: Column(
           children: [
             Center(
-              child: Container(
-                child: SvgPicture.asset(
-                  "assets/images/Vector.svg",
-                  height: 100,
-                ),
+              child: SvgPicture.asset(
+                "assets/images/Vector.svg",
+                height: 100,
               ),
             ),
             const SizedBox(

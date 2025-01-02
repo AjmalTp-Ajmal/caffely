@@ -1,3 +1,7 @@
+import 'package:caffely/core/theme/extensions/typography.dart';
+import 'package:caffely/view/screens/home/about_coffeshope.dart';
+import 'package:caffely/view/screens/home/offers.dart';
+import 'package:caffely/view/screens/home/rateings_reviews.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -29,7 +33,9 @@ class CoffeeshopeDetails extends HookWidget {
                         children: [
                           CircleAvatar(
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
                                 icon: const Icon(
                                     Icons.arrow_back_ios_new_rounded)),
                           ),
@@ -86,7 +92,13 @@ class CoffeeshopeDetails extends HookWidget {
                 ),
                 const Spacer(),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AboutCoffeshope(),
+                          ));
+                    },
                     icon: const Icon(Icons.keyboard_arrow_right))
               ],
             ),
@@ -112,7 +124,13 @@ class CoffeeshopeDetails extends HookWidget {
                 const Text("(2.4k reviews)"),
                 const Spacer(),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RatingReviewsScreen(),
+                          ));
+                    },
                     icon: const Icon(Icons.keyboard_arrow_right))
               ],
             ),
@@ -170,7 +188,13 @@ class CoffeeshopeDetails extends HookWidget {
                 ),
                 const Spacer(),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const OfferScreen(),
+                          ));
+                    },
                     icon: const Icon(Icons.keyboard_arrow_right))
               ],
             ),
@@ -214,7 +238,7 @@ class CoffeeshopeDetails extends HookWidget {
                               children: [
                                 Row(
                                   children: [
-                                    Text(popularlist[index].name),
+                                    Text(popularlist[index].name,style: context.typography.textfieldbody,),
                                   ],
                                 ),
                                 Row(

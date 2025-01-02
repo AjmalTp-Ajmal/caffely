@@ -1,4 +1,3 @@
-
 import 'package:caffely/view_model/popularmenu_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +14,10 @@ class PopularMenu extends HookWidget {
         children: [
           ListTile(
             leading: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(Icons.arrow_back)),
             title: const Text(
               "Popular Menu",
               style: TextStyle(fontWeight: FontWeight.bold),
@@ -56,8 +58,7 @@ class PopularMenu extends HookWidget {
                         ],
                       ),
                     );
-                  })
-                  )
+                  }))
         ],
       )),
     );
