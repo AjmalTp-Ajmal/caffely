@@ -55,7 +55,7 @@ final darktheme = ThemeData(
         color: Color(0xFF212121),
       ),
       textfieldboldbody: const TextStyle(
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.w700,
         color: Color(0xFF212121),
       ),
@@ -88,14 +88,14 @@ final darktheme = ThemeData(
         color: Color(0xFFFFFFFF),
       ),
       subsmallbody: const TextStyle(
-        fontSize: 24,
+        fontSize: 10,
         fontWeight: FontWeight.w700,
-        color: Color(0xFFADB1CC),
+        color: Color(0xFF00AF66),
       ),
       smallboldbody: const TextStyle(
-        fontSize: 24,
+        fontSize: 14,
         fontWeight: FontWeight.w700,
-        color: Color(0xFFADB1CC),
+        color: Color(0xFFFFFFFF),
       ),
       errortextnormal: const TextStyle(
         fontSize: 24,

@@ -134,11 +134,12 @@ class HomeFullpage extends HookWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: nearbyshopelist.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Column(
-                      children: [
-                        Stack(
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Stack(
                           children: [
                             Container(
                               height: 145,
@@ -156,43 +157,48 @@ class HomeFullpage extends HookWidget {
                               child: Container(
                                 height: 24,
                                 width: 50,
-                                decoration: const BoxDecoration(
-                                  color: Colors.black,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[850],
                                 ),
-                                child: const Row(
+                                child: Row(
                                   children: [
                                     Icon(
                                       Icons.star_outlined,
-                                      color: Colors.amber,
+                                      size: 20,
+                                      color: Colors.yellow[800],
                                     ),
-                                    Text(
-                                      "4.1",
-                                      style: TextStyle(color: Colors.white),
-                                    )
+                                    Text("4.1",
+                                        style: context.typography.smallboldbody)
                                   ],
                                 ),
                               ),
                             )
                           ],
                         ),
-                        Column(
-                          children: [
-                            Row(
-                              children: [
-                                Text(nearbyshopelist[index].name),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.location_on,
-                                    color: context.colors.buttonclr),
-                                Text(nearbyshopelist[index].distance),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                nearbyshopelist[index].name,
+                                style: context.typography.bodybold,
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(Icons.location_on,
+                                  color: context.colors.buttonclr),
+                              Text(nearbyshopelist[index].distance),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   );
                 },
               ),
@@ -244,10 +250,10 @@ class HomeFullpage extends HookWidget {
                     child: Column(
                       children: [
                         Container(
-                          height: 145,
+                          height: 142,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.amber,
+                              color: context.colors.subtextclr,
                               image: DecorationImage(
                                   image: AssetImage(popularlist[index].img))),
                         ),
@@ -255,12 +261,24 @@ class HomeFullpage extends HookWidget {
                           children: [
                             Row(
                               children: [
-                                Text(popularlist[index].name),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  popularlist[index].name,
+                                  style: context.typography.bodybold,
+                                ),
                               ],
                             ),
                             Row(
                               children: [
-                                Text(popularlist[index].price),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  popularlist[index].price,
+                                  style: context.typography.buttonsubtext,
+                                ),
                               ],
                             ),
                           ],

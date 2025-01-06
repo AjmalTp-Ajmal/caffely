@@ -13,6 +13,7 @@ import 'package:caffely/view/screens/home/nearby_shop.dart';
 import 'package:caffely/view/screens/home/notification.dart';
 import 'package:caffely/view/screens/home/oder_coffee.dart';
 import 'package:caffely/view/screens/home/payment_method.dart';
+import 'package:caffely/view/screens/home/popular_menu.dart';
 
 import 'package:caffely/view/screens/home/special_offers.dart';
 import 'package:caffely/view/screens/home/whats_mood.dart';
@@ -24,6 +25,7 @@ import 'package:caffely/view/screens/onboarding/auth/sign_up_form.dart';
 import 'package:caffely/view/screens/onboarding/auth/signin_form.dart';
 import 'package:caffely/view/screens/onboarding/light_walkthrough.dart';
 import 'package:caffely/view/screens/onboarding/welcome_screen.dart';
+import 'package:caffely/view/screens/orders/active_oders.dart';
 import 'package:caffely/view/screens/orders/cancel_oder.dart';
 import 'package:caffely/view/screens/orders/delivary_oderdetails.dart';
 
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: darktheme,
-      home: const DriverInfromation(),
+      home: const NearbyShop(),
     );
   }
 }

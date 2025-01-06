@@ -1,6 +1,6 @@
-
 import 'package:caffely/core/theme/extensions/theme_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 class bottom_navigationbar extends StatelessWidget {
   const bottom_navigationbar({
@@ -15,15 +15,23 @@ class bottom_navigationbar extends StatelessWidget {
         height: 40,
         width: double.infinity,
         color: context.colors.primary,
-        child: const Padding(
-            padding: EdgeInsets.all(8.0),
+        child: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Icon(Icons.home),
-                Icon(Icons.home),
-                Icon(Icons.home),
-                Icon(Icons.home)
+                HugeIcon(
+                    icon: HugeIcons.strokeRoundedHome01,
+                    color: context.colors.subtxtclrbold),
+                HugeIcon(
+                    icon: HugeIcons.strokeRoundedStore02,
+                    color: context.colors.subtxtclrbold),
+                HugeIcon(
+                    icon: HugeIcons.strokeRoundedStickyNote02,
+                    color: context.colors.subtxtclrbold),
+                HugeIcon(
+                    icon: HugeIcons.strokeRoundedUser,
+                    color: context.colors.subtxtclrbold),
               ],
             )),
       ),

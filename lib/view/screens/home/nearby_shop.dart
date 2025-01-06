@@ -58,8 +58,8 @@ class NearbyShop extends HookWidget {
                                   child: Container(
                                     height: 24,
                                     width: 50,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.black,
+                                    decoration:  BoxDecoration(
+                                      color: Colors.grey[850],
                                     ),
                                     child: const Row(
                                       children: [

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826068641109",
+    "project_id": "caffely-89a73",
+    "storage_bucket": "caffely-89a73.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826068641109:android:ae7d6b8d44dfc6914abbdc",
+        "android_client_info": {
+          "package_name": "com.example.caffely"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcfmIm4Jz-jOM4G-4YTVbw3Kob8Bz9x3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

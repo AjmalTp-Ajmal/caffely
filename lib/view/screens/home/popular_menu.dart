@@ -1,3 +1,5 @@
+import 'package:caffely/core/theme/extensions/theme_extension.dart';
+import 'package:caffely/core/theme/extensions/typography.dart';
 import 'package:caffely/view_model/popularmenu_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -9,20 +11,17 @@ class PopularMenu extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(Icons.arrow_back)),
+        title: Text("Popular Menu", style: context.typography.textfieldbody),
+      ),
       body: SafeArea(
           child: Column(
         children: [
-          ListTile(
-            leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.arrow_back)),
-            title: const Text(
-              "Popular Menu",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ),
           Expanded(
               child: GridView.builder(
                   itemCount: popularlist.length,
@@ -34,10 +33,11 @@ class PopularMenu extends HookWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: 145,
+                            height: 142,
+                            width: 170,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
-                                color: Colors.amber,
+                                color: context.colors.subtextclr,
                                 image: DecorationImage(
                                     image: AssetImage(popularlist[index].img))),
                           ),
@@ -45,12 +45,24 @@ class PopularMenu extends HookWidget {
                             children: [
                               Row(
                                 children: [
-                                  Text(popularlist[index].name),
+                                  const SizedBox(
+                                    width: 16,
+                                  ),
+                                  Text(
+                                    popularlist[index].name,
+                                    style: context.typography.bodybold,
+                                  ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  Text(popularlist[index].price),
+                                  const SizedBox(
+                                    width: 16,
+                                  ),
+                                  Text(
+                                    popularlist[index].price,
+                                    style: context.typography.buttonsubtext,
+                                  ),
                                 ],
                               ),
                             ],
