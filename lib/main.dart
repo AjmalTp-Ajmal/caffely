@@ -1,4 +1,5 @@
 import 'package:caffely/core/theme/dark_theme.dart';
+import 'package:caffely/firebase_options.dart';
 import 'package:caffely/view/screens/actionpagemenu/coffeeshope_all.dart';
 import 'package:caffely/view/screens/demo.dart';
 import 'package:caffely/view/screens/home/about_coffeshope.dart';
@@ -33,14 +34,21 @@ import 'package:caffely/view/screens/profile/favoritecoffe.dart';
 import 'package:caffely/view/screens/profile/personal_info.dart';
 import 'package:caffely/view/screens/profile/security_settings.dart';
 import 'package:caffely/view/screens/profile/settings_notification.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  static final saffoldMessengerkey = GlobalKey<ScaffoldMessengerState>();
   const MyApp({super.key});
 
   @override
@@ -48,7 +56,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: darktheme,
-      home: const NearbyShop(),
+      scaffoldMessengerKey: MyApp.saffoldMessengerkey,
+      home: const SignUpForm(),
     );
   }
 }
