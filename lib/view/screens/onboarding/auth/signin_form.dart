@@ -1,3 +1,4 @@
+import 'package:caffely/auth/controller/auth_controller.dart';
 import 'package:caffely/core/theme/extensions/theme_extension.dart';
 import 'package:caffely/core/theme/extensions/typography.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,8 @@ class SigninForm extends HookWidget {
   const SigninForm({super.key});
   @override
   Widget build(BuildContext context) {
+    final emailcontroller = TextEditingController();
+    final passwordcontroller = TextEditingController();
     final ischeaked = useState(false);
     final isobscure = useState(true);
     return Scaffold(
@@ -76,6 +79,7 @@ class SigninForm extends HookWidget {
                         width: 10), // Add spacing between icon and TextField
                     Expanded(
                       child: TextField(
+                        controller: emailcontroller,
                         decoration: InputDecoration(
                           hintText: "Email",
                           hintStyle: context.typography.body,
@@ -120,6 +124,7 @@ class SigninForm extends HookWidget {
                       ),
                       Expanded(
                         child: TextField(
+                          controller: passwordcontroller,
                           obscureText: isobscure.value,
                           decoration: InputDecoration(
                               hintText: "Password",
@@ -194,47 +199,49 @@ class SigninForm extends HookWidget {
                         minimumSize: const Size(500, 50),
                         backgroundColor: context.colors.buttonclr),
                     onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return Dialog(
-                              child: Container(
-                            height: 400,
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                const SizedBox(
-                                  height: 200,
-                                  width: 200,
-                                  child: Image(
-                                      image: AssetImage(
-                                          "assets/images/profile_dialog.png")),
-                                ),
-                                Text("Sign in Sucessful!",
-                                    style: context.typography.buttonsubtext),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  "Please wait......",
-                                  style: context.typography.body,
-                                ),
-                                Text(
-                                  "you will be directed to the homepage",
-                                  style: context.typography.body,
-                                ),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                const CircularProgressIndicator(
-                                  color: Color.fromARGB(255, 0, 175, 102),
-                                  value: 1.0,
-                                )
-                              ],
-                            ),
-                          ));
-                        },
-                      );
+                      AuthController().signin(
+                          emailcontroller.text, passwordcontroller.text);
+                      // showDialog(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return Dialog(
+                      //         child: Container(
+                      //       height: 400,
+                      //       padding: const EdgeInsets.all(8.0),
+                      //       child: Column(
+                      //         children: [
+                      //           const SizedBox(
+                      //             height: 200,
+                      //             width: 200,
+                      //             child: Image(
+                      //                 image: AssetImage(
+                      //                     "assets/images/profile_dialog.png")),
+                      //           ),
+                      //           Text("Sign in Sucessful!",
+                      //               style: context.typography.buttonsubtext),
+                      //           const SizedBox(
+                      //             height: 10,
+                      //           ),
+                      //           Text(
+                      //             "Please wait......",
+                      //             style: context.typography.body,
+                      //           ),
+                      //           Text(
+                      //             "you will be directed to the homepage",
+                      //             style: context.typography.body,
+                      //           ),
+                      //           const SizedBox(
+                      //             height: 20,
+                      //           ),
+                      //           const CircularProgressIndicator(
+                      //             color: Color.fromARGB(255, 0, 175, 102),
+                      //             value: 1.0,
+                      //           )
+                      //         ],
+                      //       ),
+                      //     ));
+                      //   },
+                      // );
                     },
                     child: Text(
                       "Sign in",

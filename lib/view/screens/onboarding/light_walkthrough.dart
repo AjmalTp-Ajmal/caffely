@@ -2,6 +2,7 @@ import 'package:caffely/core/constants/home/home_constants.dart';
 import 'package:caffely/core/theme/extensions/space_extensions.dart';
 import 'package:caffely/core/theme/extensions/theme_extension.dart';
 import 'package:caffely/core/theme/extensions/typography.dart';
+import 'package:caffely/view/screens/onboarding/welcome_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -16,9 +17,15 @@ class Walkthrough extends HookWidget {
     // int activepage = 0;
 
     final List<Widget> pages = [
-      const Walkthrough_1(),
-      const Walkthrough_2(),
-      const Walkthrough_3(),
+      Walkthrough_1(
+        pageController: pageController,
+      ),
+      Walkthrough_2(
+        pageController: pageController,
+      ),
+      Walkthrough_3(
+        pageController: pageController,
+      ),
     ];
 
     return Scaffold(
@@ -73,7 +80,11 @@ class MyClip extends CustomClipper<Path> {
 }
 
 class Walkthrough_1 extends StatelessWidget {
-  const Walkthrough_1({super.key});
+  final PageController pageController;
+  const Walkthrough_1({
+    super.key,
+    required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +144,13 @@ class Walkthrough_1 extends StatelessWidget {
               width: 25,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomeScreen(),
+                    ));
+              },
               style: ElevatedButton.styleFrom(
                   backgroundColor: context.colors.subbuttonclr,
                   minimumSize: const Size(170, 50)),
@@ -146,7 +163,14 @@ class Walkthrough_1 extends StatelessWidget {
               width: 20,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  pageController.nextPage(
+                    duration: const Duration(
+                      milliseconds: 500,
+                    ),
+                    curve: Curves.easeInOut,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: context.colors.buttonclr,
                     minimumSize: const Size(170, 50)),
@@ -162,7 +186,11 @@ class Walkthrough_1 extends StatelessWidget {
 }
 
 class Walkthrough_2 extends StatelessWidget {
-  const Walkthrough_2({super.key});
+  final PageController pageController;
+  const Walkthrough_2({
+    super.key,
+    required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -230,7 +258,13 @@ class Walkthrough_2 extends StatelessWidget {
               width: 25,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const WelcomeScreen(),
+                    ));
+              },
               style: ElevatedButton.styleFrom(
                   backgroundColor: context.colors.subbuttonclr,
                   minimumSize: const Size(170, 50)),
@@ -243,7 +277,14 @@ class Walkthrough_2 extends StatelessWidget {
               width: 20,
             ),
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  pageController.nextPage(
+                    duration: const Duration(
+                      milliseconds: 500,
+                    ),
+                    curve: Curves.easeInOut,
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: context.colors.buttonclr,
                     minimumSize: const Size(170, 50)),
@@ -257,7 +298,11 @@ class Walkthrough_2 extends StatelessWidget {
 }
 
 class Walkthrough_3 extends StatelessWidget {
-  const Walkthrough_3({super.key});
+  final PageController pageController;
+  const Walkthrough_3({
+    super.key,
+    required this.pageController,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -327,7 +372,13 @@ class Walkthrough_3 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const WelcomeScreen(),
+                        ));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: context.colors.buttonclr,
                       minimumSize: const Size(360, 50)),

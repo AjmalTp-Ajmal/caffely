@@ -2,6 +2,7 @@ import 'package:caffely/auth/controller/auth_controller.dart';
 import 'package:caffely/core/theme/extensions/theme_extension.dart';
 import 'package:caffely/core/theme/extensions/typography.dart';
 import 'package:caffely/main.dart';
+import 'package:caffely/view/screens/onboarding/auth/signin_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -207,7 +208,13 @@ class SignUpForm extends HookWidget {
                           style: context.typography.bodybold,
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SigninForm(),
+                                  ));
+                            },
                             child: Text(
                               "Sign in",
                               style: context.typography.buttonsubtext,
@@ -234,7 +241,7 @@ class SignUpForm extends HookWidget {
                 }
               },
               child: const Text(
-                " Sign in",
+                " Sign up",
                 style: TextStyle(color: Colors.white),
               ),
             ),

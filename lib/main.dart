@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: darktheme,
       scaffoldMessengerKey: MyApp.saffoldMessengerkey,
-      home: const SignUpForm(),
+      home: const Walkthrough(),
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'package:caffely/view/screens/onboarding/auth/sign_up_form.dart';
+import 'package:caffely/view/screens/onboarding/auth/signin_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -12,10 +14,7 @@ class WelcomeScreen extends HookWidget {
         child: Column(
           children: [
             Center(
-              child: SvgPicture.asset(
-                "assets/images/Vector.svg",
-                height: 100,
-              ),
+              child: SvgPicture.asset("assets/images/Vector (1).svg"),
             ),
             const SizedBox(
               height: 16,
@@ -25,7 +24,7 @@ class WelcomeScreen extends HookWidget {
               style: TextStyle(fontSize: 20, color: Colors.grey),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -33,21 +32,17 @@ class WelcomeScreen extends HookWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       minimumSize: const Size(200, 60)),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image(
-                            image: AssetImage(
-                          "assets/images/googe.svg",
-                        )),
-                      ),
-                      SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset("assets/images/googe.svg")),
+                      const SizedBox(
                         width: 50,
                       ),
-                      Text(
+                      const Text(
                         "Continue with google",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
@@ -55,7 +50,7 @@ class WelcomeScreen extends HookWidget {
                   )),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -63,21 +58,17 @@ class WelcomeScreen extends HookWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       minimumSize: const Size(200, 60)),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image(
-                            image: AssetImage(
-                          "assets/images/apple.svg",
-                        )),
-                      ),
-                      SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset("assets/images/apple.svg")),
+                      const SizedBox(
                         width: 50,
                       ),
-                      Text(
+                      const Text(
                         "Continue with Apple",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
@@ -85,7 +76,7 @@ class WelcomeScreen extends HookWidget {
                   )),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -93,21 +84,18 @@ class WelcomeScreen extends HookWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       minimumSize: const Size(200, 60)),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image(
-                            image: AssetImage(
-                          "assets/images/facebook.svg",
-                        )),
-                      ),
-                      SizedBox(
+                          height: 40,
+                          width: 40,
+                          child:
+                              SvgPicture.asset("assets/images/facebook.svg")),
+                      const SizedBox(
                         width: 50,
                       ),
-                      Text(
+                      const Text(
                         "Continue with Facebook",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
@@ -115,7 +103,7 @@ class WelcomeScreen extends HookWidget {
                   )),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -123,21 +111,17 @@ class WelcomeScreen extends HookWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                       minimumSize: const Size(200, 60)),
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 40,
-                        width: 40,
-                        child: Image(
-                            image: AssetImage(
-                          "assets/images/twitter.svg",
-                        )),
-                      ),
-                      SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: SvgPicture.asset("assets/images/twitter.svg")),
+                      const SizedBox(
                         width: 50,
                       ),
-                      Text(
+                      const Text(
                         "Continue with twitter",
                         style: TextStyle(color: Colors.black, fontSize: 18),
                       ),
@@ -145,12 +129,18 @@ class WelcomeScreen extends HookWidget {
                   )),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SigninForm(),
+                        ));
+                  },
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size(500, 60),
                       backgroundColor: const Color.fromARGB(255, 0, 175, 102)),
@@ -164,7 +154,13 @@ class WelcomeScreen extends HookWidget {
               children: [
                 const Text("Dont't have an account?"),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SignUpForm(),
+                          ));
+                    },
                     child: const Text(
                       "Sign'up",
                       style: TextStyle(color: Color.fromARGB(255, 0, 175, 102)),

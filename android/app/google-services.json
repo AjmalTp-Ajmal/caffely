@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "826068641109",
-    "project_id": "caffely-89a73",
-    "storage_bucket": "caffely-89a73.firebasestorage.app"
+    "project_number": "831547454178",
+    "project_id": "fir-e204e",
+    "storage_bucket": "fir-e204e.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:826068641109:android:ae7d6b8d44dfc6914abbdc",
+        "mobilesdk_app_id": "1:831547454178:android:cb4b6e6e06d43a3d7f24bb",
         "android_client_info": {
-          "package_name": "com.example.caffely"
+          "package_name": "com.ajmal.caffely"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCcfmIm4Jz-jOM4G-4YTVbw3Kob8Bz9x3k"
+          "current_key": "AIzaSyDvhIyn9XIlhZMgX04HTZAn_J7jTdFCb9A"
         }
       ],
       "services": {

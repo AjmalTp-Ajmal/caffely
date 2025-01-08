@@ -1,4 +1,4 @@
-package com.example.caffely
+package com.ajmal.caffely
 
 import io.flutter.embedding.android.FlutterActivity
 

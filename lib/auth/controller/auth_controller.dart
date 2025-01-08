@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:caffely/auth/services/auth_services.dart';
 import 'package:caffely/utilis/snackbar_utilis.dart';
 
@@ -9,7 +7,15 @@ class AuthController {
       await AuthServices.signup(email, password);
       SnackbarUtilis.showmessage("signup sucess");
     } catch (e) {
-    
+      SnackbarUtilis.showmessage(e.toString());
+    }
+  }
+
+  Future<void> signin(String email, String password) async {
+    try {
+      await AuthServices.signin(email, password);
+      SnackbarUtilis.showmessage("login sucess");
+    } catch (e) {
       SnackbarUtilis.showmessage(e.toString());
     }
   }

@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCcfmIm4Jz-jOM4G-4YTVbw3Kob8Bz9x3k',
-    appId: '1:826068641109:android:ae7d6b8d44dfc6914abbdc',
-    messagingSenderId: '826068641109',
-    projectId: 'caffely-89a73',
-    storageBucket: 'caffely-89a73.firebasestorage.app',
+    apiKey: 'AIzaSyDvhIyn9XIlhZMgX04HTZAn_J7jTdFCb9A',
+    appId: '1:831547454178:android:cb4b6e6e06d43a3d7f24bb',
+    messagingSenderId: '831547454178',
+    projectId: 'fir-e204e',
+    storageBucket: 'fir-e204e.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAeXtycSBieIIuO-7rsdGWbQPNskrvgae0',
-    appId: '1:826068641109:ios:acea9637e4f867d24abbdc',
-    messagingSenderId: '826068641109',
-    projectId: 'caffely-89a73',
-    storageBucket: 'caffely-89a73.firebasestorage.app',
-    iosBundleId: 'com.example.caffely',
+    apiKey: 'AIzaSyAWtPBAjF5yD1rMJx5w_kR8MToVXd7GYFU',
+    appId: '1:831547454178:ios:511769b9f5fa70957f24bb',
+    messagingSenderId: '831547454178',
+    projectId: 'fir-e204e',
+    storageBucket: 'fir-e204e.firebasestorage.app',
+    iosBundleId: 'com.ajmal.caffely',
   );
 }
